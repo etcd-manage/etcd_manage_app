@@ -1,0 +1,68 @@
+{
+    "public": {
+        "kv": "K/V",
+        "setings": "Setings",
+        "members": "Members",
+        "key_val": "Value",
+        "loading": "Loading...",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "unknown_err": "unknown error"
+    },
+    "login": {
+        "title": "Login",
+        "url": "Etcd Manage Url",
+        "username": "Username",
+        "password": "Password",
+        "login_btn": "Login",
+        "warn_username_password": "Please enter the user name and password",
+        "warn_http": "Please enter the http or https prefix address"
+    },
+    "home": {
+        "server_list": "Etcd server list",
+        "list_none": "The list is empty"
+    },
+    "key_val": {
+        "copy": "Copy",
+        "copy_ok": "Copied",
+        "copy_null": "Val value not obtained"
+    },
+    "setings": {
+        "switch_etcd": "Switch etcd service",
+        "lang": "Language",
+        "theme": "Theme",
+        "about": "About",
+        "help": "Help",
+        "donation": "Donation to the author",
+        "logout": "Logout",
+        "switch_etcd_alert": "There is no etcd service list, please go to web configuration"
+    },
+    "setings_theme": {
+        "auto": "Auto",
+        "dark": "Dark",
+        "light": "Light"
+    },
+    "setings_lang": {
+        "en": "English",
+        "zh": "中文"
+    },
+    "setings_donation": {
+        "message": "Please screenshots first and then open Alipay or WeChat to donate the author."
+    },
+    "setings_about": {
+        "about": "This is a visual tool for managing etcd services, freeing the developer's command line. Command line operations are geek, but comparison operations are more complex, and the use of certificates is more cumbersome, and you can't check your etcd all the time. This app was born to solve this problem. Comments are welcome",
+        "source_url": "https://github.com/etcd-manage"
+    },
+    "setings_help": {
+        "question1": "1.登录页面Etcd Manage地址是什么？",
+        "answer1": "Etcd Manage地址是管理服务端地址，服务端开源地址 https://github.com/etcd-manage/etcd-manage-server 可使用docker运行，可以部署到自己公司服务器或内网，建议使用vpn访问",
+        "question2": "2.怎么切换管理的etcd服务？",
+        "answer2": "可以通过首页右上角切换，或者通过设置中的‘切换etcd服务’切换。切换后 键/值和集群信息 页面都会显示选中的etcd服务信息。",
+        "question3": "3.关于复制信息？",
+        "answer3": "每个key的查看页面可以点击右下角按钮复制配置信息，集群信息页面点击卡片可以复制集群信息。",
+        "question5": "4.关于捐助作者？",
+        "answer5": "保存图片到相册功能没有做，请先截图再打开支付宝或微信捐助作者，你的捐助将会在后续显示在列表中。",
+        "question6": "5.开发初衷？",
+        "answer6": "etcd服务没有好用的ui工具，自己动手搞一个，作者底层技术不够牛，就是喜欢研究一些新技术，之前做了web版，最近研究flutter就动手做了一个。后续web和app会同步支持迭代，后期会尝试将app编译到mac和win桌面环境。"
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "public": {
+        "kv": "键/值",
+        "setings": "设置",
+        "members": "集群信息",
+        "key_val": "值",
+        "loading": "加载中...",
+        "cancel": "取消",
+        "confirm": "确定",
+        "unknown_err": "未知错误"
+    },
+    "login": {
+        "title": "登录",
+        "url": "Etcd Manage 地址",
+        "username": "用户名",
+        "password": "密  码",
+        "login_btn": "登  录",
+        "warn_username_password": "请输入用户名密码",
+        "warn_http": "请输入http或https前缀地址"
+    },
+    "home": {
+        "server_list": "Etcd 服务列表",
+        "list_none": "列表为空"
+    },
+    "key_val": {
+        "copy": "复制",
+        "copy_ok": "已复制",
+        "copy_null": "未获取到val值"
+    },
+    "setings": {
+        "switch_etcd": "切换etcd服务",
+        "lang": "语言",
+        "theme": "主题",
+        "about": "关于",
+        "help": "帮助",
+        "donation": "捐助作者",
+        "logout": "退出",
+        "switch_etcd_alert": "没有etcd服务列表，请前往web配置"
+    },
+    "setings_theme": {
+        "auto": "跟随系统",
+        "dark": "深色",
+        "light": "浅色"
+    },
+    "setings_lang": {
+        "en": "English",
+        "zh": "中文"
+    },
+    "setings_donation": {
+        "message": "请先截图，再打开支付宝或微信捐助作者。"
+    },
+    "setings_about": {
+        "about": "这是一个用来管理etcd服务的可视化工具，解放开发者的命令行。命令行操作很极客，但是比较操作较为复杂，而且使用证书时更加繁琐，并且你不能无时无刻查看你的etcd。这个app诞生就是为了解决这个问题。欢迎提意见",
+        "source_url": "https://github.com/etcd-manage"
+    },
+    "setings_help": {
+        "question1": "1.登录页面Etcd Manage地址是什么？",
+        "answer1": "Etcd Manage地址是管理服务端地址，服务端开源地址 https://github.com/etcd-manage/etcd-manage-server 可使用docker运行，可以部署到自己公司服务器或内网，建议使用vpn访问。",
+        "question2": "2.怎么切换管理的etcd服务？",
+        "answer2": "可以通过首页右上角切换，或者通过设置中的‘切换etcd服务’切换。切换后 键/值和集群信息 页面都会显示选中的etcd服务信息。",
+        "question3": "3.关于复制信息？",
+        "answer3": "每个key的查看页面可以点击右下角按钮复制配置信息，集群信息页面点击卡片可以复制集群信息。",
+        "question5": "4.关于捐助作者？",
+        "answer5": "保存图片到相册功能没有做，请先截图再打开支付宝或微信捐助作者，你的捐助将会在后续显示在列表中。",
+        "question6": "5.开发初衷？",
+        "answer6": "etcd服务没有好用的ui工具，自己动手搞一个，作者底层技术不够牛，就是喜欢研究一些新技术，之前做了web版，最近研究flutter就动手做了一个。后续web和app会同步支持迭代，后期会尝试将app编译到mac和win桌面环境。"
+    }
+
+}
