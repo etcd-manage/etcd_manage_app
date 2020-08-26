@@ -39,6 +39,10 @@ dependencies:
   url_launcher: ^5.4.11
   flutter_picker: ^1.1.5
   flutter_custom_dialog: ^1.0.20
+  desktop_clipboard: 
+    git:
+      url: https://github.com/shiguanghuxian/desktop_clipboard.git
+      ref: master
 
 dev_dependencies:
   flutter_test:

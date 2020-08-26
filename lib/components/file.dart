@@ -34,7 +34,7 @@ class _FileState extends State<File> {
     double width = MediaQuery.of(context).size.width / 4 - 10;
     double height = MediaQuery.of(context).size.width / 4 + 20;
     if (Platform.isMacOS || Platform.isWindows) {
-      width = 100;
+      width = 110;
       height = 130;
     }
 

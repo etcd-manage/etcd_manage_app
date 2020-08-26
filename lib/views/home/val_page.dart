@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:clipboard_manager/clipboard_manager.dart';
+import 'package:desktop_clipboard/desktop_clipboard.dart';
 import 'package:etcd_manage_app/api/keys/keys.dart';
 import 'package:etcd_manage_app/components/app_bar.dart';
 import 'package:etcd_manage_app/models/msg.dart';
@@ -91,12 +94,22 @@ class _ValPageState extends State<ValPage> {
               );
               return;
             }
-            ClipboardManager.copyToClipBoard(keyInfo.value).then((result) {
-              Fluttertoast.showToast(
-                msg: lang.get('key_val.copy_ok'),
-                gravity: ToastGravity.CENTER,
-              );
-            });
+            if (Platform.isMacOS) {
+              DesktopClipboard.setClipboardText(keyInfo.value).then((ok) {
+                print('写入板内容：' + (ok ? '成功' : '失败'));
+                // Fluttertoast.showToast(
+                //   msg: lang.get('key_val.copy_ok'),
+                //   gravity: ToastGravity.CENTER,
+                // );
+              });
+            } else {
+              ClipboardManager.copyToClipBoard(keyInfo.value).then((result) {
+                Fluttertoast.showToast(
+                  msg: lang.get('key_val.copy_ok'),
+                  gravity: ToastGravity.CENTER,
+                );
+              });
+            }
           },
           child: Text(
             lang.get('key_val.copy'),

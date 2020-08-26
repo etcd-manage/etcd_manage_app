@@ -18,6 +18,8 @@ class Keys {
     if (response.statusCode == 400) {
       Map map = json.decode(response.toString());
       msg.msg = map["msg"];
+      List<KeyInfo> list = [];
+      msg.data = list;
     } else if (response.statusCode == 200) {
       msg.code = 200;
       List<KeyInfo> list = [];

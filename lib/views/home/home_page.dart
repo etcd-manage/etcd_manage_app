@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
       int crossAxisCount = 4;
       if (Platform.isMacOS || Platform.isWindows) {
         crossAxisCount =
-            ((MediaQuery.of(context).size.width - 50) ~/ 110).toInt();
+            ((MediaQuery.of(context).size.width - 50) ~/ 130).toInt();
       }
       return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,

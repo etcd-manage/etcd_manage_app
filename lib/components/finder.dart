@@ -34,7 +34,7 @@ class _FinderState extends State<Finder> {
     double width = MediaQuery.of(context).size.width / 4 - 10;
     double height = MediaQuery.of(context).size.width / 4 + 20;
     if (Platform.isMacOS || Platform.isWindows) {
-      width = 100;
+      width = 110;
       height = 130;
     }
     return GestureDetector(
@@ -55,6 +55,7 @@ class _FinderState extends State<Finder> {
             Center(
               child: Text(
                 widget.name ?? '',
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 12,
                 ),
