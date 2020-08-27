@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:clipboard_manager/clipboard_manager.dart';
+import 'package:desktop_clipboard/desktop_clipboard.dart';
 import 'package:etcd_manage_app/api/keys/keys.dart';
 import 'package:etcd_manage_app/components/app_bar.dart';
 import 'package:etcd_manage_app/components/member_card.dart';
@@ -91,12 +93,18 @@ DbSize: ${memberInfo.dbSize}
 PeerURLs: ${peerURLs}
 ClientURLs: ${clientURLs}
 ''';
-                  ClipboardManager.copyToClipBoard(copyData).then((result) {
-                    Fluttertoast.showToast(
-                      msg: lang.get('key_val.copy_ok'),
-                      gravity: ToastGravity.CENTER,
-                    );
-                  });
+                  if (Platform.isMacOS) {
+                    DesktopClipboard.setClipboardText(copyData).then((ok) {
+                      print('写入板内容：' + (ok ? '成功' : '失败'));
+                    });
+                  } else {
+                    ClipboardManager.copyToClipBoard(copyData).then((result) {
+                      Fluttertoast.showToast(
+                        msg: lang.get('key_val.copy_ok'),
+                        gravity: ToastGravity.CENTER,
+                      );
+                    });
+                  }
                 },
               );
             },

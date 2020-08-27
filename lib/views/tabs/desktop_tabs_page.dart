@@ -6,13 +6,14 @@ import 'package:etcd_manage_app/views/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class TabsPage extends StatefulWidget {
+class DesktopTabsPage extends StatefulWidget {
   @override
-  _TabsPageState createState() => _TabsPageState();
+  _DesktopTabsPageState createState() => _DesktopTabsPageState();
 }
 
-class _TabsPageState extends State<TabsPage> {
+class _DesktopTabsPageState extends State<DesktopTabsPage> {
   List<String> tabbarTitles = ['首页', '集群信息', '设置'];
 
   int _currentIndex = 0;
