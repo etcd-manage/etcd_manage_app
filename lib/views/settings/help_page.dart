@@ -60,6 +60,10 @@ class _HelpPageState extends State<HelpPage> {
                 question: lang.get('setings_help.question6'),
                 content: lang.get('setings_help.answer6'),
               ),
+              HelpQuestion(
+                question: lang.get('setings_help.question6'),
+                content: lang.get('setings_help.answer6'),
+              ),
             ],
           ),
         ),

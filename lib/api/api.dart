@@ -41,7 +41,7 @@ class DioUtil {
   DioUtil._internal() {
     String baseAddress = ApiConfig.BaseAddress;
     if (manageBaseAddress != null && manageBaseAddress != "") {
-      print("manageBaseAddress"+manageBaseAddress);
+      print("manageBaseAddress" + manageBaseAddress);
       baseAddress = manageBaseAddress;
     }
     options = BaseOptions(
@@ -79,6 +79,13 @@ class DioUtil {
         print("params = ${options.data}");
         final SharedPreferences prefs = await _prefs;
         String userStr = prefs.getString("userinfo");
+
+        Fluttertoast.showToast(
+          msg: userStr,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+        );
+
         if (userStr != null && userStr != "") {
           try {
             var userinfo = UserInfo.fromJson(json.decode(userStr));
@@ -106,6 +113,35 @@ class DioUtil {
         print("\n================== 错误响应数据 ======================");
         print("type = ${e.type}");
         print("message = ${e.message}");
+        return e;
+      }));
+    } else {
+      ajax.interceptors
+          .add(InterceptorsWrapper(onRequest: (RequestOptions options) async {
+
+        final SharedPreferences prefs = await _prefs;
+        String userStr = prefs.getString("userinfo");
+        if (userStr != null && userStr != "") {
+          try {
+            var userinfo = UserInfo.fromJson(json.decode(userStr));
+            options.headers["Token"] = userinfo.token;
+          } catch (e) {}
+        }
+        // 选择的etcd id
+        String serverInfoStr = prefs.getString("server_info");
+        if (serverInfoStr != null && serverInfoStr != "") {
+          try {
+            var serverInfo = ServerInfo.fromJson(json.decode(serverInfoStr));
+            options.headers["EtcdID"] = serverInfo.id;
+          } catch (e) {
+            options.headers["EtcdID"] = "0";
+          }
+        }
+
+        return options;
+      }, onResponse: (Response response) {
+        return response;
+      }, onError: (DioError e) {
         return e;
       }));
     }

@@ -32,6 +32,8 @@ class _HomePageState extends State<HomePage> {
     getServers();
   }
 
+  // 加载中
+  bool isLoading = true;
   // key列表
   List<KeyInfo> keyList = [];
   // 当前路径
@@ -57,6 +59,7 @@ class _HomePageState extends State<HomePage> {
   void getKeys() async {
     if (mounted) {
       setState(() {
+        this.isLoading = true;
         this.keyList = [];
       });
     }
@@ -65,6 +68,11 @@ class _HomePageState extends State<HomePage> {
     if (msg.code == 401) {
       Navigator.pushReplacementNamed(context, '/login');
       return;
+    }
+    if (mounted) {
+      setState(() {
+        this.isLoading = false;
+      });
     }
     if (msg.code != 200) {
       Fluttertoast.showToast(
@@ -275,10 +283,10 @@ class _HomePageState extends State<HomePage> {
                       );
                     }),
               ),
-              keyList?.length == 0
+              keyList?.length == 0 
                   ? Container(
                       child: Center(
-                        child: Text(lang.get('public.loading')),
+                        child: isLoading == true ? Text(lang.get('public.loading')) : Text(''),
                       ),
                     )
                   : Expanded(

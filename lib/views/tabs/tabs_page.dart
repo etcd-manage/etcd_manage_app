@@ -45,21 +45,24 @@ class _TabsPageState extends State<TabsPage> {
         bottomNavigationBar: CupertinoTabBar(
           items: [
             BottomNavigationBarItem(
-              label: tabbarTitles[0],
+              // label: tabbarTitles[0],
+              title: Text(tabbarTitles[0]),
               icon: Icon(
                 Icons.home,
                 size: 28,
               ),
             ),
             BottomNavigationBarItem(
-              label: tabbarTitles[1],
+              // label: tabbarTitles[1],
+              title: Text(tabbarTitles[1]),
               icon: Icon(
                 Icons.devices,
                 size: 28,
               ),
             ),
             BottomNavigationBarItem(
-              label: tabbarTitles[2],
+              // label: tabbarTitles[2],
+              title: Text(tabbarTitles[2]),
               icon: Icon(
                 Icons.settings,
                 size: 28,

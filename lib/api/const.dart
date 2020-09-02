@@ -3,7 +3,7 @@
 // 生产
 class ApiConfig {
   // api基本地址
-  static const BaseAddress = 'http://192.168.41.10:10280';
+  static const BaseAddress = 'http://140.143.234.132:11280';
   // 连接超时
   static const ConnectTimeout = 5000; // 5s
   // 接收超时
